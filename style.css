@@ -52,6 +52,7 @@ div {
     margin-top: 20px;
     margin-bottom: 10px;
     background-color: azure;
+    border-radius: 10px;
 }
 
 #fifth-row-container {
