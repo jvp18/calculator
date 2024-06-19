@@ -9,11 +9,14 @@
     </head>
     <body>
         <div id="main-container">
-            <div class="sub-container" id="display-container"></div>
+            <div class="sub-container" id="display-container">
+                <div class="display" id="display-empty"></div>
+                <div class="display" id="display-content"></div>
+            </div>
             <div class="sub-container" id="first-row-container">
-                <div class="button">AC</div>
-                <div class="button">+/-</div>
-                <div class="button">%</div>
+                <div class="button operator">AC</div>
+                <div class="button operator" >+/-</div>
+                <div class="button operator">%</div>
                 <div class="button operator">/</div>
             </div>
             <div class="sub-container" id="second-row-container">
@@ -36,8 +39,8 @@
             </div>
             <div class="sub-container" id="fifth-row-container">
                 <div class="button number" id="zero-button">0</div>
-                <div class="button" id="decimal-button">.</div>
-                <div class="button" id="equal-button">=</div>
+                <div class="button operator" id="decimal-button">.</div>
+                <div class="button operator" id="equal-button">=</div>
             </div>
         </div>
     </body>
