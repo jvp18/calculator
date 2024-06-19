@@ -1,32 +1,55 @@
 const buttons = document.querySelectorAll(".button");
-const display = document.querySelector("#display-container");
+const displayElement = document.querySelector("#display-content");
 
 
 const add = (a,b) => a + b;
 const subtract = (a,b) => a - b;
 const multiply = (a,b) => a * b;
-const divide = (a,b) => a / b;
+const divide = (a,b) => b === 0 ? "BRUH" : a / b;
 
 
-const calcArray = []
+let curNum = "";
+let prevNum = "";
+let operator = "";
 
-let number = ""
 const getNum = (e) => {  
-   let showNumber = document.createElement("span")
    if (e.target.classList.contains("number")) {
-      number += e.target.textContent
-      showNumber.textContent = e.target.textContent
-      display.appendChild(showNumber)
-   } else {
-      console.log(number)
-   }
+      curNum += e.target.textContent;
+      display(curNum);
+   };
 };
 
-const show = () => {
+const getOperator = (e) => {
+   if (e.target.classList.contains("operator")) {
+   }  if (e.target.textContent === "AC") {
+      curNum = "";
+      prevNum = "";
+      operator = "";
+      display("");
+   }
+}
 
+const operate = (num1,num2,operator) => {
+   const n1 = Number(num1);
+   const n2 = Number(num1);
+   switch (operator) {
+      case "+":
+         return add(n1,n2);
+      case "-":
+         return subtract(n1,n2);
+      case "+":
+         return multiply(n1,n2);
+      case "+":
+         return divide(n1,n2); 
+   };
+};
+
+const display = (content) => {
+   displayElement.textContent = content;
 }
 
 
-buttons.forEach(num => num.addEventListener("click", getNum));
+buttons.forEach(button => button.addEventListener("click", getNum));
+buttons.forEach(button => button.addEventListener("click", getOperator));
 
 
