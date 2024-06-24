@@ -33,12 +33,17 @@ const getOperator = (e) => {
       } else {
          curNum = Math.abs(curNum)
       }
+   } else {
+      if (curNum && prevNum && operator) {
+
+      }
+
    }
 }
 
 const operate = (num1,num2,operator) => {
    const n1 = Number(num1);
-   const n2 = Number(num1);
+   const n2 = Number(num2);
    switch (operator) {
       case "+":
          return add(n1,n2);
