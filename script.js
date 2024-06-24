@@ -26,6 +26,13 @@ const getOperator = (e) => {
       prevNum = "";
       operator = "";
       display("");
+   } else if (curNum && e.target.textContent === "+/-") {
+      if (curNum > 0) {
+         curNum = -curNum
+         display(curNum);
+      } else {
+         curNum = Math.abs(curNum)
+      }
    }
 }
 
