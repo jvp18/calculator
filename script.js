@@ -28,18 +28,18 @@ const getOperator = (e) => {
       display("");
    } else if (curNum && e.target.textContent === "+/-") {
       if (curNum > 0) {
-         curNum = -curNum
+         curNum = -curNum;
          display(curNum);
       } else {
-         curNum = Math.abs(curNum)
+         curNum = Math.abs(curNum);
+         display(curNum);
       }
-   } else {
-      if (curNum && prevNum && operator) {
-
-      }
-
+   } else if (curNum && e.target.textContent === "%") {
+         curNum = curNum/100;
+         display(curNum);
    }
-}
+};
+
 
 const operate = (num1,num2,operator) => {
    const n1 = Number(num1);
