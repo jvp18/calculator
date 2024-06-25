@@ -22,10 +22,10 @@ const getNum = (e) => {
 const getOperator = (e) => {
    if (e.target.classList.contains("operator")) {
    }  if (e.target.textContent === "AC") {
-      curNum = "";
-      prevNum = "";
-      operator = "";
-      display("");
+         curNum = "";
+         prevNum = "";
+         operator = "";
+         display("");
    } else if (curNum && e.target.textContent === "+/-") {
       if (curNum > 0) {
          curNum = -curNum;
