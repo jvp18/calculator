@@ -21,23 +21,35 @@ const getNum = (e) => {
 
 const getOperator = (e) => {
    if (e.target.classList.contains("operator")) {
-   }  if (e.target.textContent === "AC") {
+      if (e.target.textContent === "AC") {
          curNum = "";
          prevNum = "";
          operator = "";
          display("");
-   } else if (curNum && e.target.textContent === "+/-") {
-      if (curNum > 0) {
-         curNum = -curNum;
-         display(curNum);
-      } else {
-         curNum = Math.abs(curNum);
-         display(curNum);
+      } else if (curNum && e.target.textContent === "+/-") {
+         if (curNum > 0) {
+            curNum = -curNum;
+            display(curNum);
+         } else {
+            curNum = Math.abs(curNum);
+            display(curNum);
+         };
+      } else if (curNum && e.target.textContent === "%") {
+            curNum = curNum/100;
+            display(curNum);
+      } else if (curNum && prevNum && operator) {
+            result = operate(prevNum,curNum,operator);
+            display(result);
+            prevNum = result;
+            curNum = "";
+      } else if (curNum) {
+            prevNum = curNum;
+            curNum = "";
+            operator = e.target.textContent;
+            console.log(e.target.textContent);  
+            console.log(prevNum);    
       }
-   } else if (curNum && e.target.textContent === "%") {
-         curNum = curNum/100;
-         display(curNum);
-   }
+   };
 };
 
 
@@ -49,9 +61,9 @@ const operate = (num1,num2,operator) => {
          return add(n1,n2);
       case "-":
          return subtract(n1,n2);
-      case "+":
+      case "*":
          return multiply(n1,n2);
-      case "+":
+      case "/":
          return divide(n1,n2); 
    };
 };
