@@ -44,7 +44,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: beige;
     border-radius: 100px;
     margin: 8px
 }
@@ -60,14 +59,14 @@ body {
     margin-bottom: 20px;
     background-color: rgb(246, 255, 255);
     border-radius: 10px;
-    outline: 4px solid rgb(152, 202, 238);
+    outline: 4px solid rgb(0, 0, 0);
 }
 
 .display {
     flex: 1 1 0;
     padding: 0;
     align-self: center;
-     ;
+     
 }
 
 #display-empty {
@@ -92,3 +91,16 @@ body {
     flex: 1 1 0;
 }
 
+.operation {
+    background-color: rgb(238, 165, 81);
+    color: white;
+}
+
+.number, #decimal-button{
+    background-color: rgb(104, 100, 97);
+    color: white;
+}
+
+.function {
+    background-color: rgb(170, 170, 170);
+}
