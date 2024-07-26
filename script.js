@@ -38,17 +38,14 @@ const getOperator = (e) => {
             curNum = curNum/100;
             display(curNum);
       } else if (curNum && prevNum && operator) {
-            result = operate(prevNum,curNum,operator);
-            display(result);
-            prevNum = result;
-            curNum = "";
+            prevNum = operate(prevNum,curNum,operator);
+            display(prevNum);
+            curNum = "";   
       } else if (curNum) {
             prevNum = curNum;
             curNum = "";
-            operator = e.target.textContent;
-            console.log(e.target.textContent);  
-            console.log(prevNum);    
       }
+      operator = e.target.textContent;  
    };
 };
 
@@ -69,8 +66,13 @@ const operate = (num1,num2,operator) => {
 };
 
 const display = (content) => {
+   if (content.toString().length > 8) {
+      content = Number(content).toExponential(8);
+   } else {
+      content = Number(content).toFixed(0);
+   };
    displayElement.textContent = content;
-}
+};
 
 
 buttons.forEach(button => button.addEventListener("click", getNum));
